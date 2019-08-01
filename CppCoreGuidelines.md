@@ -492,6 +492,16 @@ public: `lowercase_with_underscore`
 
 `s_variable_name`
 
+##### Example
+
+```class foo {
+static const uint8_t s_bar = 5;
+};```
+
+or, in the global scope:
+
+```static bool s_some_flag = false;```
+
 ### <a name="LMN.namespaces"></a> LMN.namespaces: namespace conventions 
 
 * libraries use namespaces corresponding to directory structure (e.g., `common-cc`, `lpc175x-libs`)
