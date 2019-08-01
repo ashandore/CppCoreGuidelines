@@ -29,6 +29,7 @@ Problems:
 You can [read an explanation of the scope and structure of this Guide](#S-abstract) or just jump straight in:
 
 * [In: Introduction](#S-introduction)
+* [LMN: Luminaire style rules](#S-luminaire)
 * [P: Philosophy](#S-philosophy)
 * [I: Interfaces](#S-interfaces)
 * [F: Functions](#S-functions)
@@ -406,6 +407,7 @@ Recommended information sources can be found in [the references](#S-references).
 ## <a name="SS-sec"></a>In.sec: Major sections
 
 * [In: Introduction](#S-introduction)
+* [LMN: Luminaire style rules](#S-luminaire)
 * [P: Philosophy](#S-philosophy)
 * [I: Interfaces](#S-interfaces)
 * [F: Functions](#S-functions)
@@ -442,6 +444,74 @@ These sections are not orthogonal.
 
 Each section (e.g., "P" for "Philosophy") and each subsection (e.g., "C.hier" for "Class Hierarchies (OOP)") have an abbreviation for ease of searching and reference.
 The main section abbreviations are also used in rule numbers (e.g., "C.11" for "Make concrete types regular").
+
+# <a name="S-luminaire"></a>LMN: Luminaire style rules
+### <a name="LMN.override"></a>LMN.override: Luminaire style rules take priority
+
+The style rules set forth in this section override other style guidelines in this document. This is only true for guidelines related to naming.
+
+##### Example
+
+[Enum.5](#Renum-caps) states that enum values should not be named using `ALL_CAPS` to avoid clashes with c-style macros. These rules supersede that, stating that they _must_ be named using `ALL_CAPS`.
+
+This section does not conflict with a rule like [Enum.3](#Renum-class) despite expressing an opinion on how an `enum`'s values should be named.
+
+### <a name="LMN.names"></a> LMN.names: naming conventions in code
+#### classes, structs, unions (all non-enum user-defined types)
+
+`lowercase_with_underscore`
+
+#### enums
+
+`plural_lowercase_with_underscores`
+for example, `languages` or `profile_types`
+
+#### type aliases (from `using` directives)
+
+`lowercase_with_underscore_t`
+
+#### template parameters
+
+types: `CamelCase`
+values: `ALL_CAPS`
+
+#### `constexpr` variables
+
+`ALL_CAPS`
+
+#### methods & functions
+
+`lowercase_with_underscore`
+
+#### member variables
+
+private: `m_lowercase_with_underscore`
+public: `lowercase_with_underscore`
+
+#### static variables (in class or global scope)
+
+`s_variable_name`
+
+### <a name="LMN.namespaces"></a> LMN.namespaces: namespace conventions 
+
+* libraries use namespaces corresponding to directory structure (e.g., `common-cc`, `lpc175x-libs`)
+* projects & high level libraries use flat namespacing (for now) (`luminaire::jgrinder`, `luminaire::espresso`) with all types in that namespace
+* in all cases, a trailing `::interface` namespace is used for abstract base classes (pure virtual interfaces).
+
+### <a name="LMN.files"></a> LMN.files: file naming conventions 
+
+#### extensions
+
+`.cc` for C++ source files and `.hh` for C++ headers.
+`.c` and `.h` for C source files & headers.
+
+#### project-specific files
+
+project-specific files should have a project-specific name prepended.
+
+##### Examples
+
+`grinder-mode.hh` in `jgrinder-cc-fw` vs. `mode.hh` in `libespresso-cc`.
 
 # <a name="S-philosophy"></a>P: Philosophy
 
