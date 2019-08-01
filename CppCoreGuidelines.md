@@ -494,13 +494,17 @@ public: `lowercase_with_underscore`
 
 ##### Example
 
-```class foo {
+```
+class foo {
 static const uint8_t s_bar = 5;
-};```
+};
+```
 
 or, in the global scope:
 
-```static bool s_some_flag = false;```
+```
+static bool s_some_flag = false;
+```
 
 ### <a name="LMN.namespaces"></a> LMN.namespaces: namespace conventions 
 
