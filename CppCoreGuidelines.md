@@ -495,7 +495,7 @@ public: `lowercase_with_underscore`
 ### <a name="LMN.namespaces"></a> LMN.namespaces: namespace conventions 
 
 * libraries use namespaces corresponding to directory structure (e.g., `common-cc`, `lpc175x-libs`)
-* projects & high level libraries use flat namespacing (for now) (`luminaire::jgrinder`, `luminaire::espresso`) with all types in that namespace
+* projects & high level libraries use flat namespacing (for now) (`luminaire::lineapb`, `luminaire::espresso`) with all types in that namespace
 * in all cases, a trailing `::interface` namespace is used for abstract base classes (pure virtual interfaces).
 
 ### <a name="LMN.files"></a> LMN.files: file naming conventions 
@@ -508,10 +508,6 @@ public: `lowercase_with_underscore`
 #### project-specific files
 
 project-specific files should have a project-specific name prepended.
-
-##### Examples
-
-`grinder-mode.hh` in `jgrinder-cc-fw` vs. `mode.hh` in `libespresso-cc`.
 
 # <a name="S-philosophy"></a>P: Philosophy
 
