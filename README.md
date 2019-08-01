@@ -15,6 +15,8 @@ Many of the guidelines make use of the header-only Guidelines Support Library. O
 
 This version of the C++ Core Guidelines includes a section laying out Luminaire's agreed-upon style rules for C++. This section does concern itself with the kind of low-level issues that the guidelines as a whole avoid. In the few cases where they contradict stylistic rules in the core guidelines, Luminaire's style rules take priority.
 
+The majority of the C++ Core Guidelines document uses code examples that *do not* follow Luminaire's style rules. They should not be taken as stylistic guidelines, only as examples of the rules the guidelines are presenting. Examples within the Luminaire section of the guidelines should be taken as stylistic guidelines.
+
 Luminaire's style rules will ideally be supported by a tool like `clang-format`. But they aren't yet.
 
 ## Background and scope
